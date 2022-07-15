@@ -49,7 +49,7 @@ function Navbar() {
               href=""
               className="py-4 px-2 text-gray-500 font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in"
             >
-              Blog
+              Blogs
             </a>
             <a
               href=""
