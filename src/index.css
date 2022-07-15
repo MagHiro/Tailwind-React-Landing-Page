@@ -42,6 +42,11 @@ body {
   user-select: none;
 }
 
+html.dark {
+  color: #eee;
+  background: #262626;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

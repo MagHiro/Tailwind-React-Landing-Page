@@ -10,53 +10,89 @@ function Navbar() {
     });
   };
 
+  const darkMode = () => {
+    const toggler = document.querySelector(".toggler");
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+      toggler.checked = true;
+    } else {
+      document.documentElement.classList.remove("dark");
+      toggler.checked = false;
+    }
+  };
+
+  const TogleDarkMode = () => {
+    const btnToggler = document.querySelector(".switch");
+    const toggler = document.querySelector(".toggler");
+
+    btnToggler.addEventListener("click", () => {
+      if (toggler.checked == true) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    });
+  };
 
   useEffect(() => {
     ResponsiveNavbar();
+    darkMode();
   }, []);
 
   return (
-    <nav className="bg-white">
+    <nav className="bg-white dark:bg-neutral-800  dark:text-white">
       <div className="max-w-6xl mx-auto px-4 py-6">
         <div className="flex justify-between">
           <div>
             <a href="#" className="flex items-center py-4 px-2">
               <span className="font-semibold text-primary text-5xl mt-2">
-                <span className="text-black">The</span>Hom
+                <span className="text-black dark:text-white">The</span>Hom
               </span>
             </a>
           </div>
           <div className="hidden lg:flex items-center tracking-wide space-x-8 mt-3">
             <a
               href=""
-              className="py-4 px-2 text-gray-500 font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in"
+              className="py-4 px-2 text-gray-500 dark:text-white font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in"
             >
               Home
             </a>
             <a
               href=""
-              className="py-4 px-2 text-gray-500 font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in-out"
+              className="py-4 px-2 text-gray-500 dark:text-white font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in-out"
             >
-              About 
+              About
             </a>
             <a
               href=""
-              className="py-4 px-2 text-gray-500 font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in"
+              className="py-4 px-2 text-gray-500 dark:text-white font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in"
             >
               Services
             </a>
             <a
               href=""
-              className="py-4 px-2 text-gray-500 font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in"
+              className="py-4 px-2 text-gray-500 dark:text-white font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in"
             >
               Blogs
             </a>
             <a
               href=""
-              className="py-4 px-2 text-gray-500 font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in"
+              className="py-4 px-2 text-gray-500 dark:text-white font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in"
             >
               Contact
             </a>
+            <label className="switch">
+              <input
+                onClick={TogleDarkMode}
+                className="toggler"
+                type="checkbox"
+              />
+              <span className="slider round"></span>
+            </label>
           </div>
 
           <div className="hidden lg:flex items-center space-x-2">
@@ -85,17 +121,17 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div className="hidden mobile-menu items-center">
-        <ul className="">
-          <li className="active">
+      <div className="hidden mobile-menu ">
+        <ul className="flex flex-col items-center">
+          <li className="active w-full text-center">
             <a
               href="index.html"
-              className="block text-sm px-2 py-4 text-white bg-primary font-semibold"
+              className="block w-full text-sm px-2 py-4 text-white bg-primary font-semibold"
             >
               Home
             </a>
           </li>
-          <li>
+          <li className="w-full text-center">
             <a
               href="#services"
               className="block text-sm px-2 py-4 hover:bg-primary transition duration-300"
@@ -103,7 +139,7 @@ function Navbar() {
               Services
             </a>
           </li>
-          <li>
+          <li className="w-full text-center">
             <a
               href="#about"
               className="block text-sm px-2 py-4 hover:bg-primary transition duration-300"
@@ -111,7 +147,7 @@ function Navbar() {
               About
             </a>
           </li>
-          <li>
+          <li className="w-full text-center">
             <a
               href="#contact"
               className="block text-sm px-2 py-4 hover:bg-primary transition duration-300"
@@ -119,6 +155,14 @@ function Navbar() {
               Contact Us
             </a>
           </li>
+          <label className="switch mb-4">
+              <input
+                onClick={TogleDarkMode}
+                className="toggler"
+                type="checkbox"
+              />
+              <span className="slider round"></span>
+            </label>
         </ul>
       </div>
     </nav>

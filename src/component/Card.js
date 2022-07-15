@@ -51,6 +51,7 @@ const maxPrice = [
 export default function Card() {
   return (
     <div className="bg-white relative px-5 w-[95%] lg:w-[740px] mx-auto lg:flex flex-column rounded-3xl shadow-lg border-y-2">
+      
       <div className="py-5 lg:space-x-8 flex flex-col lg:flex-row lg:mx-auto">
         <div className="lg:mt-1 group inline-block relative lg:after:content-['|'] lg:after:ml-0.5 lg:after:text-gray-400 lg:after:text-2xl ">
           <button className=" text-gray-700 font-semibold mb-4 lg:mb-0 py-2 px-4 gap-4 rounded w-full justify-between flex items-center lg:inline-flex lg:w-fit">

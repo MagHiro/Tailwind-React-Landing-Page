@@ -4,13 +4,13 @@ import product from "./../assets/product.jpg";
 export default function Product() {
   return (
     <div className="Container py-20 flex flex-col max-w-8xl mx-auto ">
-      <div className="bg-blue-200 h-[1810px] md:h-[1200px] lg:h-[720px] opacity-20 absolute z-1 bg-cover left-0 right-0"></div>
+      <div className="bg-blue-200 dark:bg-neutral-700 dark:opacity-20 h-[1810px] md:h-[1200px] lg:h-[720px] opacity-20 absolute z-1 bg-cover left-0 right-0"></div>
       <div className="text-center py-16">
         <span className="text-lg font-semibold text-primary">OUR PROPERTY</span>
         <h1 className="text-4xl font-bold mt-2">LAST PROPERTY</h1>
       </div>
       <div className="flex flex-col lg:flex-row gap-7">
-        <div className="bg-white relative  w-[95%] lg:w-full mx-auto text-center rounded-3xl shadow-lg border-y-2 content">
+        <div className="bg-white dark:bg-neutral-800  dark:shadow-neutral-900 relative  w-[95%] lg:w-full mx-auto text-center rounded-3xl shadow-lg content">
           <div className="flex flex-col  pb-4">
             <img
               className="max-w-[100%] rounded-t-3xl hover:scale-110 hover:rounded-3xl transition duration-300 hover:shadow-md"
@@ -117,7 +117,7 @@ export default function Product() {
             </div>
           </div>
         </div>
-        <div className="bg-white relative  w-[95%] lg:w-full mx-auto text-center rounded-3xl shadow-lg border-y-2 content">
+        <div className="bg-white relative dark:bg-neutral-800  dark:shadow-neutral-900 w-[95%] lg:w-full mx-auto text-center rounded-3xl shadow-lg content">
           <div className="flex flex-col  pb-4">
             <img
               className="max-w-[100%] rounded-t-3xl hover:scale-110 hover:rounded-3xl transition duration-300 hover:shadow-md"
@@ -224,7 +224,7 @@ export default function Product() {
             </div>
           </div>
         </div>
-        <div className="bg-white relative  w-[95%] lg:w-full mx-auto text-center rounded-3xl shadow-lg border-y-2 content">
+        <div className="bg-white dark:bg-neutral-800  dark:shadow-neutral-900 relative  w-[95%] lg:w-full mx-auto text-center rounded-3xl shadow-lg content">
           <div className="flex flex-col  pb-4">
             <img
               className="max-w-[100%] rounded-t-3xl hover:scale-110 hover:rounded-3xl transition duration-300 hover:shadow-md"

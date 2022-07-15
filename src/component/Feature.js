@@ -7,8 +7,8 @@ export default function Feature() {
         <span className="text-lg font-semibold text-primary">WHAT WE DO</span>
         <h1 className="text-4xl font-bold mt-2">OUR MAIN FOCUS</h1>
       </div>
-      <div className="flex flex-col lg:flex-row gap-7 ">
-        <div className="bg-white relative px-5 w-[95%] lg:w-full mx-auto text-center rounded-3xl shadow-lg border-y-2 content">
+      <div className="flex flex-col lg:flex-row gap-7  ">
+        <div className="bg-white dark:bg-neutral-800 relative px-5 w-[95%] lg:w-full mx-auto text-center rounded-3xl dark:shadow-neutral-900 shadow-lg  content">
           <div className="items-center flex flex-col py-8 px-4 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ export default function Feature() {
             </button>
           </div>
         </div>
-        <div className=" bg-white relative px-5 w-[95%] lg:w-full mx-auto text-center rounded-3xl shadow-lg border-y-2 content">
+        <div className=" bg-white dark:bg-neutral-800 relative px-5 w-[95%] lg:w-full mx-auto text-center rounded-3xl dark:shadow-neutral-900 shadow-lg content">
           <div className="items-center flex flex-col py-8  px-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ export default function Feature() {
             </button>
           </div>
         </div>
-        <div className=" bg-white relative px-5 w-[95%] lg:w-full mx-auto text-center rounded-3xl shadow-lg border-y-2 content">
+        <div className=" bg-white dark:bg-neutral-800 relative px-5 w-[95%] lg:w-full mx-auto text-center rounded-3xl dark:shadow-neutral-900 shadow-lg content">
           <div className="items-center flex flex-col py-8  px-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
