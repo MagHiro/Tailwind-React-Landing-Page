@@ -38,11 +38,11 @@
     opacity: 0;
     width: 0;
     height: 0;
+    cursor: pointer;
   }
   
   .slider {
     position: absolute;
-    cursor: pointer;
     top: 0;
     left: 0;
     right: 0;

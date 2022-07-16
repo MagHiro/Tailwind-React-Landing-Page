@@ -10,22 +10,20 @@ function Navbar() {
     });
   };
 
-  const darkMode = () => {
+  const DarkMode = () => {
+    const btnToggler = document.querySelector(".switch");
     const toggler = document.querySelector(".toggler");
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-      toggler.checked = true;
-    } else {
-      document.documentElement.classList.remove("dark");
-      toggler.checked = false;
-    }
+
+    toggler.addEventListener("click", () => {
+      if (toggler.checked === true) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    });
   };
 
-  const TogleDarkMode = () => {
+  const TogleDarkModee = () => {
     const btnToggler = document.querySelector(".switch");
     const toggler = document.querySelector(".toggler");
 
@@ -40,11 +38,11 @@ function Navbar() {
 
   useEffect(() => {
     ResponsiveNavbar();
-    darkMode();
+    DarkMode();
   }, []);
 
   return (
-    <nav className="bg-white dark:bg-neutral-800  dark:text-white">
+    <nav className="bg-white dark:bg-neutral-800 relative dark:text-white">
       <div className="max-w-6xl mx-auto px-4 py-6">
         <div className="flex justify-between">
           <div>
@@ -54,7 +52,7 @@ function Navbar() {
               </span>
             </a>
           </div>
-          <div className="hidden lg:flex items-center tracking-wide space-x-8 mt-3">
+          <div className="hidden mobile-menu flex z-[999] items-center rounded-lg shadow-lg flex-col max-w-xs w-full lg:max-w-none lg:shadow-none lg:w-auto bg-white dark:bg-neutral-800 absolute top-24 right-2 lg:flex lg:top-0 lg:flex-row lg:relative lg:items-center lg:tracking-wide lg:space-x-8 mt-3">
             <a
               href=""
               className="py-4 px-2 text-gray-500 dark:text-white font-semibold border-b-4 border-transparent hover:border-primary hover:text-secondary transition duration-300 ease-in"
@@ -85,12 +83,8 @@ function Navbar() {
             >
               Contact
             </a>
-            <label className="switch">
-              <input
-                onClick={TogleDarkMode}
-                className="toggler"
-                type="checkbox"
-              />
+            <label className="switch  mt-4 mb-4 lg:mb-0 lg:mt-0">
+              <input onClick={DarkMode} className="toggler" type="checkbox" />
               <span className="slider round"></span>
             </label>
           </div>
@@ -121,7 +115,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div className="hidden mobile-menu ">
+      {/* <div className="hidden lg:hidden mobile-menu ">
         <ul className="flex flex-col items-center">
           <li className="active w-full text-center">
             <a
@@ -155,16 +149,12 @@ function Navbar() {
               Contact Us
             </a>
           </li>
-          <label className="switch mb-4">
-              <input
-                onClick={TogleDarkMode}
-                className="toggler"
-                type="checkbox"
-              />
-              <span className="slider round"></span>
-            </label>
+          <label className="switch">
+            <input onClick={DarkMode} className="toggler" type="checkbox" />
+            <span className="slider round"></span>
+          </label>
         </ul>
-      </div>
+      </div> */}
     </nav>
   );
 }
